@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+ --color-usa-red: #B31942;
+ --color-usa-white: #FFFFFF;
+ --color-usa-blue: #0A3161;
+ --color-usa-black: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Markazi Text', sans-serif;
+  background-color: var(--color-usa-blue);
+}
+
+
+button:disabled {
+  opacity: 50%;
+  cursor: default;
+}
+
+/* our custom input */
+.custom-input {
+  border: none;
+  outline: none;
+  position: relative;
+  border-radius: 50px;
+  background: linear-gradient(to right, var(--color-usa-red), var(--color-usa-white), var(--color-usa-blue),  var(--color-usa-red));
+  z-index: 1;
+}
+
+.custom-input::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 3px;
+  bottom: 3px;
+  border-radius: 50px;
+  background-color: white;
+  z-index: -1;
+}
+
+/* our custom button */
+.custom-button {
+  border: none;
+  outline: none;
+  position: relative;
+  border-radius: 50px;
+  background: var(--color-usa-white);
+  /* background: linear-gradient(to right, var(--color-usa-white), var(--color-usa-blue), var(--color-usa-white),  var(--color-usa-blue)); */
+  z-index: 1;
+  transition: 0.25s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 50%;
+  }
+
+  &:focus {
+    outline: auto;
+  }
+}
+
+.custom-button::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 3px;
+  bottom: 3px;
+  border-radius: 50px;
+  background-color: var(--color-usa-red);
+  z-index: -1;
+}
