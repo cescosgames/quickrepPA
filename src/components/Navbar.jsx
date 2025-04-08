@@ -32,7 +32,7 @@ const Navbar = () => {
 
             {/* right side */}
             <div className='w-full flex justify-end'>
-                <a href="#" className='transition hover:opacity-50'>Github</a>
+                <a href="https://github.com/cescosgames/quickrepPA" target='_blank' className='transition hover:opacity-50'>Github</a>
             </div>
         </span>
     </nav>
