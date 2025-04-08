@@ -35,8 +35,8 @@ Live Demo: N/A, work in progress
 
 1. Download or clone the repo onto your local environment, and navigate into the folder
 ```
-git clone https://github.com/cescosgames/
-cd 
+git clone https://github.com/cescosgames/quickrepPA
+cd quickrepPA
 ```
 2. Install dependencies
 ```
