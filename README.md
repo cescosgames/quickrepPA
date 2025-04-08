@@ -7,7 +7,7 @@ This project aims to remove all friction in this process and make finding the ne
 and recieve a mailing address.
 <br>
 <br>
-Live Demo: N/A, searching for alternative to Google Civic Information API
+Live Demo: N/A, work in progress
 
 ## How it was made:
 
@@ -16,6 +16,7 @@ Live Demo: N/A, searching for alternative to Google Civic Information API
 - Build Tool: Vite
 - Styling: TailwindCSS, CSS
 - State Management: Jotai
+- API: ____
 - Other: 
   - HeroIcons for star, X, and left/right chevron icons
   - Google Fonts for Markazi Text font
