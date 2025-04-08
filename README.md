@@ -1,9 +1,6 @@
 # QuickRepPA, get your PA rep's mailing address fast
 
-QuickRepPA is a simple project designed to rapidly give users their representatives mailing address. This project was born when I stopped by a 'write to your representative'
-table run by a civic minded individual. They provided great assistance to lots of people who wanted to get started writing to their representatives but did not know how, 
-myself included! The first step of course, was to find your representative and I noticed that the offical government website was not mobile friendly and provided lots of
-information that might not be necessary for someone who is just quickly trying to get the correct mailing address to send their letters to.
+QuickRepPA is a simple project designed to rapidly give users their representatives mailing address. 
 <br>
 <br>
 This project aims to remove all friction in this process and make finding the necessary information so easy anyone could quickly make their voice heard. Simply enter a zip code,
@@ -58,8 +55,13 @@ This project features
 1. Simple, and keyboard accessible layout
 2. Straightforward delivery of necessary information
 
-## Notes:
+## Notes and Background:
 
+This project was born when I stopped by a 'write to your representative'
+table run by a civic minded individual. They provided great assistance to lots of people who wanted to get started writing to their representatives but did not know how, 
+myself included! The first step of course, was to find your representative and I noticed that the offical government website was not mobile friendly and provided lots of
+information that might not be necessary for someone who is just quickly trying to get the correct mailing address to send their letters to.
+<br><br>
 At the moment, this project does not have a civic information API to rely on to gather relevant information. Google Civic Information seemed to be the best option, but 
 since it is being discontinued I did not end up implementing it in this version. I will continue to look into other options from which to gather the necessary information.
 <br><br>
