@@ -11,12 +11,12 @@ const Footer = ({ openModal }) => {
                 {/* center, hidden on small */}
                 <div className='w-full justify-center items-center flex md:text-lg text-sm'>
                     <span className='flex gap-1'>
-                        <p className='cursor-default hidden md:block'>A project</p>
+                        <p className='cursor-default hidden lg:block'>A project</p>
                         <a href="https://github.com/cescosgames" target='_blank' className='hover:text-blue-400 transition'>by Cesco</a>
                         <p>|</p>
-                        <p className='cursor-default hidden md:block'>Data</p>
+                        <p className='cursor-default hidden lg:block'>Data last updated </p>
                         {/* <a href="#" className='hover:text-blue-400 transition'>____ API</a> */}
-                        <p>last updated 2025</p>
+                        <p>2025</p>
                     </span>
                 </div>
                 {/* right side */}
