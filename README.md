@@ -7,7 +7,7 @@ This project aims to remove all friction in this process and make finding the ne
 and recieve a mailing address.
 <br>
 <br>
-Live Demo: N/A, work in progress
+Live Demo: coming soon!
 
 ## How it was made:
 
@@ -16,7 +16,8 @@ Live Demo: N/A, work in progress
 - Build Tool: Vite
 - Styling: TailwindCSS, CSS
 - State Management: Jotai
-- API: ____
+- Data: manual JSON created with assistance by ClaudeCode
+- API: none
 - Other: 
   - HeroIcons for star, X, and left/right chevron icons
   - Google Fonts for Markazi Text font
@@ -74,3 +75,10 @@ As a stretch goal, I would like to add template current issue letters that users
 process as frictionless as possible to get peoples voices heard, so anything that can make the process easier I would like to explore.
 <br><br>
 Thanks for checking this project out, I'm always open to improvement so any advice, comments, or criticism is always welcome!
+<br><br>
+<br><br>
+Update 2/15/26:
+<br><br>
+Thanks to assistance from Claude, I realized I didn't need a an API to call the zip -> rep data, I could generate it for myself in a way that is good enough for most users (not counting the overlapping districts). I used Claude Code to generate a comprehensive json file of all our state representatives with contact information and zip codes for quick lookup. In the case of overlapping zips, the first rep is returned.
+<br><br>
+Now that I have this functional, there is a lot of room for improvement like returning multiple reps for overlapping zips or adding direct clickable links to rep websites. 
