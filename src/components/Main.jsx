@@ -76,7 +76,8 @@ const Main = () => {
         <p className='leading-none'>
           This project was created as a rapid way to find the mailing address of your PA representative.
           <br></br><br></br>
-          I am currently looking for an alternative to Google Civic Information API to get this project online
+          Representative Data was gathered using Claude Code based on 2025 public records. Please doublecheck information.
+          {/* I am currently looking for an alternative to Google Civic Information API to get this project online */}
           <br></br><br></br>
           For any questions, concerns, or constructive feedback, please feel free to contact me!
         </p>

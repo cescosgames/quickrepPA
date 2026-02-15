@@ -14,8 +14,9 @@ const Footer = ({ openModal }) => {
                         <p className='cursor-default hidden md:block'>A project</p>
                         <a href="https://github.com/cescosgames" target='_blank' className='hover:text-blue-400 transition'>by Cesco</a>
                         <p>|</p>
-                        <p className='cursor-default hidden md:block'>Data by</p>
-                        <a href="#" className='hover:text-blue-400 transition'>____ API</a>
+                        <p className='cursor-default hidden md:block'>Data</p>
+                        {/* <a href="#" className='hover:text-blue-400 transition'>____ API</a> */}
+                        <p>last updated 2025</p>
                     </span>
                 </div>
                 {/* right side */}

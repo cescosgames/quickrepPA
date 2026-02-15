@@ -21,4 +21,4 @@ export const AboutModal = ({ isOpen, onClose, children }) => {
         </div>
       </div>
     );
-}
+};
