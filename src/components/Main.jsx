@@ -23,57 +23,42 @@ const Main = () => {
     setIsLoading(true);
 
     try {
-      // replace '/data.json' with the API url, see google example below
-      const data = await fetchData('/data.json');
+      // fetch pa rep data from public folder
+      const data = await fetchData('/reps.json');
 
-      // // google civics example (discontinued) below
-      // const apiKey = import.meta.env.CIVICS_API_KEY; // Replace with real key inside .env file
-      // const endpoint = `https://www.googleapis.com/civicinfo/v2/representatives`; // this is the old endpoint
-      // const url = `${endpoint}?key=${apiKey}&address=${zipcode}`; // pass this URL to the fetchData function
-      // // const googleExample = await fetchData(url); // see google civics documentation for data structure that is returned
-
+      // find the first entry matching the user's zip code
       const match = data.find((item) => item.zipCode === zipcode);
 
       if (match) {
-        setFinalAddress(returnFullAddress(match));
+        // pull rep info and set state for the result screen
+        const rep = match.representative;
+        setRepName(rep.name);
+        setFinalAddress(
+          `${rep.name} (${rep.party})\nDistrict ${match.district}\nPhone: ${rep.phone}\n${rep.website}`
+        );
       } else {
-        alert(`Sorry, I don't recognize this as a valid PA zip code!`)
+        // no match found, alert the user and bail out
+        alert(`Sorry, I don't recognize this as a valid PA zip code!`);
         return;
       }
-      
+
     } catch (error) {
       alert(`Error, please refresh and try again: ${error.message}`);
       return;
     }
 
     setIsLoading(false);
-    // at the end, show the result
     setShowResult((prevState) => !prevState);
   }
 
   async function fetchData(url) {
     const response = await fetch(url);
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error(`Bad Response: ${response.status}`);
     }
 
     return await response.json();
   }
-
-  const returnFullAddress = (data) => {
-    const name = data.representative.name;
-    const streetAddress = data.representative.contact.address;
-    const city = data.representative.contact.city;
-    const state = data.representative.contact.state;
-    const zip = data.representative.contact.zip;
-
-    const fullAddress = `${name} \n ${streetAddress} \n ${city}, ${state} ${zip}`;
-
-    setRepName(name);
-
-    return fullAddress;
-  }
-
 
 
   // function to return to question
@@ -84,25 +69,25 @@ const Main = () => {
   return (
     // bg-gradient-to-b from-usa-white to-usa-blue // if we want gradient
     <div className='relative bg-usa-blue h-screen w-screen flex justify-center'>
-        <Navbar />
+      <Navbar />
 
-        <AboutModal isOpen={isModalOpen} onClose={()=>setModalOpen(false)}> 
-          {/* modal content */}
-          <p className='leading-none'>
-            This project was created as a rapid way to find the mailing address of your PA representative. 
-            <br></br><br></br>
-            I am currently looking for an alternative to Google Civic Information API to get this project online
-            <br></br><br></br>
-            For any questions, concerns, or constructive feedback, please feel free to contact me!
-          </p>
-        </AboutModal>
+      <AboutModal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+        {/* modal content */}
+        <p className='leading-none'>
+          This project was created as a rapid way to find the mailing address of your PA representative.
+          <br></br><br></br>
+          I am currently looking for an alternative to Google Civic Information API to get this project online
+          <br></br><br></br>
+          For any questions, concerns, or constructive feedback, please feel free to contact me!
+        </p>
+      </AboutModal>
 
-        {showResult ? 
-            <Input seeResult={seeResultsFunc}/> 
-          : 
-            <Result newQuery={newSearch} headerText={`Step 2: Write a letter to Rep. ${repName} Using The Information Below!`} contactText={finalAddress}/>}
-        
-        <Footer openModal={()=>setModalOpen(true)}/>
+      {showResult ?
+        <Input seeResult={seeResultsFunc} />
+        :
+        <Result newQuery={newSearch} headerText={`Step 2: Write a letter to Rep. ${repName} Using The Information Below!`} contactText={finalAddress} />}
+
+      <Footer openModal={() => setModalOpen(true)} />
     </div>
   )
 }
