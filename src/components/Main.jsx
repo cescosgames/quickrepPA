@@ -26,7 +26,7 @@ const Main = () => {
       // fetch pa rep data from public folder
       const data = await fetchData('/reps.json');
 
-      // find the first entry matching the user's zip code
+      // find the FIRST entry matching the user's zip code
       const match = data.find((item) => item.zipCode === zipcode);
 
       if (match) {
@@ -74,10 +74,12 @@ const Main = () => {
       <AboutModal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
         {/* modal content */}
         <p className='leading-none'>
-          This project was created as a rapid way to find the mailing address of your PA representative.
+          This project was created as a rapid way to find the contact information of your PA representative.
           <br></br><br></br>
           Representative Data was gathered using Claude Code based on 2025 public records. Please doublecheck information.
           {/* I am currently looking for an alternative to Google Civic Information API to get this project online */}
+          <br></br><br></br>
+          Want to make one of these for your state? Clone the github repo, update the reps.json file, and it will work immediately!
           <br></br><br></br>
           For any questions, concerns, or constructive feedback, please feel free to contact me!
         </p>
