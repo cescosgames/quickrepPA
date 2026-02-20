@@ -26,15 +26,22 @@ const Main = () => {
       // fetch pa rep data from public folder
       const data = await fetchData('/reps.json');
 
-      // find the FIRST entry matching the user's zip code
-      const match = data.find((item) => item.zipCode === zipcode);
+      // // find the FIRST entry matching the user's zip code
+      // const match = data.find((item) => item.zipCode === zipcode);
 
-      if (match) {
+      // find all matches
+      const matches = data.filter((item) => item.zipCode === zipcode)
+
+      // // just verifying overlapping districts work
+      // console.log(matches)
+
+      // only use first match now, add something for second
+      if (matches[0]) {
         // pull rep info and set state for the result screen
-        const rep = match.representative;
+        const rep = matches[0].representative;
         setRepName(rep.name);
         setFinalAddress(
-          `${rep.name} (${rep.party})\nDistrict ${match.district}\nPhone: ${rep.phone}\n${rep.website}`
+          `${rep.name} (${rep.party})\nDistrict ${matches[0].district}\nPhone: ${rep.phone}\n${rep.website}`
         );
       } else {
         // no match found, alert the user and bail out
